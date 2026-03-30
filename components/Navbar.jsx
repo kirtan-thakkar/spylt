@@ -9,6 +9,7 @@ const Navbar = () => {
         width={100}
         height={50}
         className="w-20 md:w-24"
+        loading="eager"
       />
     </nav>
   );
