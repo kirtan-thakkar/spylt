@@ -7,6 +7,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Hero />
+      <div className="h-dvh border border-red-400" />
     </div>
   );
 }
