@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <MessagePage />
-      <div className="h-dvh border border-red-400" />
+      <div className="h-dvh" />
     </div>
   );
 }

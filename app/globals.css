@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
 
 @layer components {
   .paragraph-line {
-    @apply text-wrap overflow-hidden;
+    @apply text-nowrap overflow-hidden;
   }
   
   .hero-container {
