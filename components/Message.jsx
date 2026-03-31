@@ -12,12 +12,14 @@ const MessagePage = () => {
     gsap.to(firstMsgSplit.words, {
       color: "#faeade",
       ease: "power1.in",
-      stagger: 0.4,
+      stagger: 1,
       scrollTrigger: {
         trigger: ".message-content",
-        start: "top 80%",
-        end: "bottom top",
+        start: "top 90%",
+        end: "60% center",
+        scrub:true,
       },
+      
     });
   }, []);
   return (
