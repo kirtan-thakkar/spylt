@@ -17,9 +17,20 @@ const MessagePage = () => {
         trigger: ".message-content",
         start: "top 90%",
         end: "60% center",
-        scrub:true,
+        scrub: true,
       },
-      
+    });
+
+    gsap.to(secondMsgSplit.words, {
+      color: "#faeade",
+      ease: "power1.in",
+      stagger: 1,
+      scrollTrigger: {
+        trigger: ".second-message",
+        start: "top 90%",
+        end: "70% center",
+        scrub: true,
+      },
     });
   }, []);
   return (
