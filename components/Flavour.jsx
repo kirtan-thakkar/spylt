@@ -7,10 +7,7 @@ const FlavourPage = () => {
   const sliderRef = useRef(null);
   useGSAP(()=>{
     const section = sliderRef.current;
-    if (!section || typeof window === "undefined") return;
-
     const scrollAmount = section.scrollWidth - window.innerWidth;
-
     const t1 = gsap.timeline({
       scrollTrigger:{
         trigger:".flavor-section",
