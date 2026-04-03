@@ -2,8 +2,10 @@ import { flavorlists } from "@/app/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 const FlavourSlider = () => {
   const sliderRef = useRef(null);
+  const isTablet  = useMediaQuery({ query: "(max-width: 1024px)" });
   useGSAP(() => {
     const section = sliderRef.current;
     const scrollAmount = section.scrollWidth - window.innerWidth;

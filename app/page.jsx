@@ -6,6 +6,7 @@ import FlavourPage from "@/components/Flavour";
 import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import NutritionPage from "@/components/Nutrition";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function Home() {
   useGSAP(() => {
@@ -22,6 +23,7 @@ export default function Home() {
           <Hero />
           <MessagePage />
           <FlavourPage />
+          <NutritionPage />
           <div className="h-dvh border border-neutral-900" />
         </div>
       </div>
