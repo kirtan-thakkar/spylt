@@ -1,3 +1,5 @@
+import ClipPathTitle from "./ClipPathTitle";
+
 const BeneafitPage = () => {
   return (
     <section className="benefit-section">
@@ -8,7 +10,13 @@ const BeneafitPage = () => {
             Explore the Key Benefits of Choosing SPYLT
           </p>
           <div className="mt-20 col-center">
+            <ClipPathTitle title={"Shelf stable"} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
+
+            <ClipPathTitle title={"Shelf stable"} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
             
+            <ClipPathTitle title={"Shelf stable"} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
+            
+            <ClipPathTitle title={"Shelf stable"} color={"#faeade"} bg={"#c88e64"} className={"first-title"} borderColor={"#222123"} />
 
           </div>
         </div>

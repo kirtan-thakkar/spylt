@@ -1,8 +1,30 @@
-const ClipPathTitle = ({title,color,bg, className})=>{
-    return(
-        <div className={className}>
-            ClipPathtitle
+const ClipPathTitle = ({ title, color, bg, className, borderColor }) => {
+  return (
+    <div className="general-title">
+      <div
+        style={{
+          clipPath: "",
+          borderColor: borderColor,
+          color: color,
+        }}
+        className={`${className} border-[1.5vw] text-nowrap opacity-100`}
+      >
+        <div
+          className="px-3 pt-3 pb-5 md:px-14 md:pt-0"
+          style={{
+            backgroundColor: bg,
+          }}
+        >
+          <h2
+            style={{
+              color: color,
+            }}
+          >
+            {title}
+          </h2>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 export default ClipPathTitle;
