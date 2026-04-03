@@ -7,6 +7,10 @@ const BeneafitPage = () => {
             Unlock the Advantages: <br />
             Explore the Key Benefits of Choosing SPYLT
           </p>
+          <div className="mt-20 col-center">
+            
+
+          </div>
         </div>
       </div>
     </section>
