@@ -5,10 +5,10 @@ import Navbar from "@/components/Navbar";
 import FlavourPage from "@/components/Flavour";
 import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 import gsap from "gsap";
-import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function Home() {
-  useEffect(() => {
+  useGSAP(() => {
     ScrollSmoother.create({
       smooth: 1,
       effects: true,
