@@ -1,4 +1,3 @@
-"use client";
 import { useMediaQuery } from "react-responsive";
 import { nutrientLists } from "../app/constants";
 import { useEffect, useState } from "react";
@@ -6,11 +5,13 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import gsap from "gsap";
 
-const NutritionPage = () => {
-  const [lists, setLists] = useState(nutrientLists);
+const NutritionSection = () => {
   const isMobile = useMediaQuery({
     query: "(max-width: 768px)",
   });
+
+  const [lists, setLists] = useState(nutrientLists);
+
   useEffect(() => {
     if (isMobile) {
       setLists(nutrientLists.slice(0, 3));
@@ -62,20 +63,21 @@ const NutritionPage = () => {
       ease: "power1.inOut",
     });
   });
+
   return (
     <section className="nutrition-section">
       <img
         src="/images/slider-dip.png"
-        alt="slider"
-        className="w-full object-cover"
+        alt="img"
+        className="w-full  object-cover"
       />
 
-      <img src="/images/big-img.png" alt="big-image" className="big-img" />
+      <img src="/images/big-img.png" alt="img" className="big-img" />
 
-      <div className="mt-14 flex flex-col justify-between px-5 md:mt-0 md:flex-row md:px-10">
+      <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
         <div className="relative inline-block md:translate-y-20">
-          <div className="general-title relative flex flex-col items-center justify-center gap-24">
-            <div className="place-self-start overflow-hidden">
+          <div className="general-title relative flex flex-col justify-center items-center gap-24">
+            <div className="overflow-hidden place-self-start">
               <h1 className="nutrition-title">It still does</h1>
             </div>
             <div
@@ -84,16 +86,16 @@ const NutritionPage = () => {
               }}
               className="nutrition-text-scroll place-self-start"
             >
-              <div className="bg-yellow-brown px-3 pt-3 pb-5 md:px-5 md:pt-0">
+              <div className="bg-yellow-brown pb-5 md:pt-0 pt-3 md:px-5 px-3">
                 <h2 className="text-milk-yellow">Body Good</h2>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex translate-y-5 items-center md:justify-center">
-          <div className="max-w-md md:max-w-xs">
-            <p className="font-paragraph text-lg text-balance md:text-right">
+        <div className="flex md:justify-center items-center translate-y-5">
+          <div className="md:max-w-xs max-w-md">
+            <p className="text-lg md:text-right text-balance font-paragraph">
               Milk contains a wide array of nutrients, including vitamins,
               minerals, and protein, and this is lactose free
             </p>
@@ -103,11 +105,11 @@ const NutritionPage = () => {
         <div className="nutrition-box">
           <div className="list-wrapper">
             {lists.map((nutrient, index) => (
-              <div key={index} className="col-center relative flex-1">
+              <div key={index} className="relative flex-1 col-center">
                 <div>
-                  <p className="font-paragraph md:text-lg">{nutrient.label}</p>
-                  <p className="font-paragraph mt-2 text-sm">up to</p>
-                  <p className="text-2xl font-bold tracking-tighter md:text-4xl">
+                  <p className="md:text-lg font-paragraph">{nutrient.label}</p>
+                  <p className="font-paragraph text-sm mt-2">up to</p>
+                  <p className="text-2xl md:text-4xl tracking-tighter font-bold">
                     {nutrient.amount}
                   </p>
                 </div>
@@ -123,4 +125,5 @@ const NutritionPage = () => {
     </section>
   );
 };
-export default NutritionPage;
+
+export default NutritionSection;

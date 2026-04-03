@@ -1,0 +1,15 @@
+const BeneafitPage = () => {
+  return (
+    <section className="benefit-section">
+      <div className="container mx-auto pt-20">
+        <div className="col-center">
+          <p>
+            Unlock the Advantages: <br />
+            Explore the Key Benefits of Choosing SPYLT
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+export default BeneafitPage;
