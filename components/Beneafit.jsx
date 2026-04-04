@@ -9,9 +9,9 @@ const BeneafitPage = () => {
       scrollTrigger: {
         trigger: ".benefit-section",
         start: "top 60%",
-        end: "bottom 70%",
+        endTrigger: ".benefit-section .vd-pin-section",
+        end: "top 90%",
         scrub: 1.5,
-        markers: true,
       },
     });
     revealTimeline

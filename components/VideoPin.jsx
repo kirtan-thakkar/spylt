@@ -1,34 +1,51 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Video } from "lucide-react"
+import { Video } from "lucide-react";
 
-const VideoPin =()=>{
-    useGSAP(()=>{
-        const t1 = gsap.timeline({
-            scrollTrigger:{
-                trigger:".vd-pin-section",
-                start:"-15% top" //the animation will start when the top of the section is 15% above the top of the viewport
-            }
-        })
-    })
-    return(
-        <section className="vd-pin-section">
-            <div style={{
-                clipPath:""
-            }} className="size-full video-box">
-                <video src="/videos/pin-video.mp4" autoPlay muted playsInline loop />
+const VideoPin = () => {
+  useGSAP(() => {
+    const t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vd-pin-section",
+        start: "-15% top", //the animation will start when the top of the section is 15% above the top of the viewport
+        end: "200% top",
+        scrub: 1.5,
+        markers: true,
+        pin: true,
+      },
+    });
+    t1.to(".vd-pin-section .video-box", {
+      duration: 1,
+      clipPath: "circle(70.7% at 50% 50%)",
+      ease: "power1.inOut",
+    });
+  });
+  return (
+    <section className="vd-pin-section">
+      <div
+        style={{
+          clipPath: "circle(13.6% at 50% 50%)",
+        }}
+        className="video-box size-full"
+      >
+        <video src="/videos/pin-video.mp4" autoPlay muted playsInline loop />
 
-                <div className="abs-center md:scale-100 scale-200 ">
-                    <img src="/images/circle-text.svg" alt="circular-text-image" className="spin-circle" />
-                    <div className="play-btn">
-                        <img src="/images/play(1).svg" alt="play-btn" className="size-[3vw] ml-[.5vw]" />
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-    )
-}
+        <div className="abs-center scale-200 md:scale-100">
+          <img
+            src="/images/circle-text.svg"
+            alt="circular-text-image"
+            className="spin-circle"
+          />
+          <div className="play-btn">
+            <img
+              src="/images/play(1).svg"
+              alt="play-btn"
+              className="ml-[.5vw] size-[3vw]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 export default VideoPin;
