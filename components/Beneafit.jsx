@@ -1,14 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import ClipPathTitle from "./ClipPathTitle";
 import gsap from "gsap";
+import VideoPin from "./VideoPin";
 const BeneafitPage = () => {
   useGSAP(() => {
     const revealTimeline = gsap.timeline({
-      delay: 2,
+      delay: 1,
       scrollTrigger: {
         trigger: ".benefit-section",
         start: "top 60%",
-        end: "top top",
+        end: "bottom 70%",
         scrub: 1.5,
         markers: true,
       },
@@ -40,7 +41,7 @@ const BeneafitPage = () => {
       });
   }, []);
   return (
-    <section className="benefit-section">
+    <section className="benefit-section ">
       <div className="container mx-auto pt-20">
         <div className="col-center">
           <p>
@@ -52,7 +53,7 @@ const BeneafitPage = () => {
               title={"Shelf stable"}
               color={"#faeade"}
               bg={"#c88e64"}
-              className={"first-title"}
+              className={"first-title opacity-0"}
               borderColor={"#222123"}
             />
 
@@ -60,7 +61,7 @@ const BeneafitPage = () => {
               title={"Protein + Caffeine"}
               color={"#222123"}
               bg={"#faeade"}
-              className={"second-title"}
+              className={"second-title opacity-0"}
               borderColor={"#222123"}
             />
 
@@ -68,7 +69,7 @@ const BeneafitPage = () => {
               title={"Infinitely recyclable"}
               color={"#faeade"}
               bg={"#7F3B2D"}
-              className={"third-title"}
+              className={"third-title opacity-0"}
               borderColor={"#222123"}
             />
 
@@ -76,7 +77,7 @@ const BeneafitPage = () => {
               title={"Lactose free"}
               color={"#2E2D2F"}
               bg={"#FED775"}
-              className={"fourth-title"}
+              className={"fourth-title opacity-0"}
               borderColor={"#222123"}
             />
           </div>
@@ -84,6 +85,10 @@ const BeneafitPage = () => {
             <p>ANd much more ...</p>
           </div>
         </div>
+      </div>
+      <div className="relative overlay-box">
+        <VideoPin />
+
       </div>
     </section>
   );
