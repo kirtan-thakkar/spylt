@@ -3,12 +3,28 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import gsap from "gsap";
 const Testimonial = () => {
-    //move the section upward by 140% of the viewport height to create a parallax effect when scrolling kinda parralex effect when scrolling 
-    useGSAP(()=>{
-        gsap.set(".testimonials-section",{
-            marginTop:"-140vh",
-        })
-    })
+  //move the section upward by 140% of the viewport height to create a parallax effect when scrolling kinda parralex effect when scrolling
+  useGSAP(() => {
+    gsap.set(".testimonials-section", {
+      marginTop: "-140vh",
+    });
+
+    const t1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".testimonials-section",
+        start: "top bottom",
+        end: "200% top",
+        scrub: true,
+      },
+    });
+    t1.to(".testimonials-section .first-title", {
+      xPercent: 70,
+    }).to(".testimonials-section .sec-title", {
+      xPercent: 25,
+    },'<').to(".testimonials-section .third-title", {
+      xPercent: -50,
+    },'<')
+  });
 
   const videoRef = useRef([]);
   const handlePlay = (index) => {
