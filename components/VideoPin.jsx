@@ -13,7 +13,6 @@ const VideoPin = () => {
         start: "-15% top", //the animation will start when the top of the section is 15% above the top of the viewport
         end: "200% top",
         scrub: 1.5,
-        markers: true,
         pin: true,
       },
       });

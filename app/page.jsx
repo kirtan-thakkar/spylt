@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import NutritionPage from "@/components/Nutrition";
 import BeneafitPage from "@/components/Beneafit";
+import Testimonial from "@/components/Testimonial";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 export default function Home() {
   useGSAP(() => {
@@ -26,6 +27,7 @@ export default function Home() {
           <FlavourPage />
           <NutritionPage />
           <BeneafitPage />
+          <Testimonial />
           <div className="h-dvh border border-neutral-900" />
         </div>
       </div>
