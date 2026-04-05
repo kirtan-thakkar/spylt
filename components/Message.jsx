@@ -76,7 +76,7 @@ const MessagePage = () => {
               }}
               className="msg-text-scroll"
             >
-              <div className="bg-light-brown md:pd-5 px-5 pb-3">
+              <div className="bg-light-brown md:p-5 px-5 pb-3">
                 <h2 className="text-red-brown">Fuel Up</h2>
               </div>
             </div>

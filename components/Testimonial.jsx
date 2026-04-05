@@ -74,7 +74,7 @@ const Testimonial = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`vd-card ${card.translation} ${card.rotation}`}
+            className={`vd-card ${card.translation ?? ""} ${card.rotation}`}
           >
             <video
               ref={(el) => (videoRef.current[index] = el)}

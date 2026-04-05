@@ -3,7 +3,7 @@ const ClipPathTitle = ({ title, color, bg, className, borderColor }) => {
     <div className="general-title">
       <div
         style={{
-          clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%);",
+          clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
           borderColor: borderColor,
           color: color,
         }}

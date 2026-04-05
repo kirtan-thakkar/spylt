@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "ProximaNova, sans-serif";
-  src: url("/fonts/ProximaNova-Regular.otf");
+  font-family: "Proxima Nova";
+  src: url("/font/ProximaNova-Regular.otf");
 }
 
 @theme {
@@ -19,7 +19,7 @@
   --color-red: #a02128;
   --color-milk: #faeade;
   --font-sans: "Antonio", sans-serif;
-  --font-paragraph: "ProximaNova, sans-serif";
+  --font-paragraph: "Proxima Nova", sans-serif;
 }
 
 html,

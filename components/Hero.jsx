@@ -2,9 +2,11 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useMediaQuery } from "react-responsive";
 
 const Hero = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" }); 
+  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
   useGSAP(() => {
     const split = new SplitText(".hero-title", { type: "chars" });
     const timeline = gsap.timeline({
@@ -55,11 +57,16 @@ const Hero = () => {
     <>
       <section className="bg-main-bg">
         <div className="hero-container">
-          <img
-            src="/images/static-img.png"
-            alt="Hero Image"
-            className="object-auto absolute bottom-0 left-1/2 -translate-x-1/2 scale-100 md:scale-150"
-          />
+          {
+            isTablet ? (
+              <>
+                {isMobile &&  <img src="/images/hero-bg.png" className="absolute bottom-40 size-full object-cover" />}
+                <img src="/images/hero-img.png" className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto "/>
+              </> 
+            ) : (
+              <video src="/videos/hero-bg.mp4" autoPlay playsInline muted  className="absolute inset-0 size-full object-cover"/>
+            ) 
+          }
           <div className="hero-content opacity-0">
             {/* Going to animate hence overflow-hidden */}
             <div className="overflow-hidden">

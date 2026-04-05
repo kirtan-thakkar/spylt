@@ -56,12 +56,12 @@ const FlavourSlider = () => {
               className="absolute bottom-0"
             />
             <img
-              src={`/images/${flavor.color}-drink.webp `}
+              src={`/images/${flavor.color}-drink.webp`}
               alt={flavor.name}
               className="drinks"
             />
             <img
-              src={`/images/${flavor.color}-elements.webp `}
+              src={`/images/${flavor.color}-elements.webp`}
               alt={flavor.name}
               className="elements"
             />
