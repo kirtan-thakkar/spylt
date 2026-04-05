@@ -27,8 +27,10 @@ export default function Home() {
           <MessagePage />
           <FlavourPage />
           <NutritionPage />
-          <BeneafitPage />
-          <Testimonial />
+          <div>
+            <BeneafitPage />
+            <Testimonial />
+          </div>
           <FooterPage />
         </div>
       </div>

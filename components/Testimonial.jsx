@@ -6,53 +6,65 @@ const Testimonial = () => {
   const videoRef = useRef([]);
   //move the section upward by 140% of the viewport height to create a parallax effect when scrolling kinda parralex effect when scrolling
   useGSAP(() => {
-    gsap.set(".testimonials-section", {
-      marginTop: "-140vh",
-    });
+    const mm = gsap.matchMedia();
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".testimonials-section",
-        start: "top bottom",
-        end: "200% top",
-        scrub: true,
-      },
-    });
+    mm.add("(min-width: 768px)", () => {
+      gsap.set(".testimonials-section", {
+        marginTop: "-140vh",
+      });
 
-    tl.to(".testimonials-section .first-title", {
-      xPercent: 70,
-    })
-      .to(
-        ".testimonials-section .sec-title",
-        {
-          xPercent: 25,
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".testimonials-section",
+          start: "top bottom",
+          end: "200% top",
+          scrub: true,
         },
-        "<",
-      )
-      .to(
-        ".testimonials-section .third-title",
-        {
-          xPercent: -50,
+      });
+
+      tl.to(".testimonials-section .first-title", {
+        xPercent: 70,
+      })
+        .to(
+          ".testimonials-section .sec-title",
+          {
+            xPercent: 25,
+          },
+          "<",
+        )
+        .to(
+          ".testimonials-section .third-title",
+          {
+            xPercent: -50,
+          },
+          "<",
+        );
+
+      const pinTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".testimonials-section",
+          start: "10% top",
+          end: "200% top",
+          scrub: 1.5,
+          pin: true,
         },
-        "<",
-      );
+      });
 
-    const pinTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".testimonials-section",
-        start: "10% top",
-        end: "200% top",
-        scrub: 1.5,
-        pin: true,
-      },
+      pinTl.from(".vd-card", {
+        yPercent: 150,
+        stagger: 0.2,
+        ease: "power1.inOut",
+      });
     });
 
-    pinTl.from(".vd-card", {
-      yPercent: 150,
-      stagger: 0.2,
-      ease: "power1.inOut",
+    mm.add("(max-width: 767px)", () => {
+      gsap.set(".testimonials-section", {
+        clearProps: "marginTop",
+      });
     });
-  });
+
+    return () => mm.revert();
+  }, []);
 
   const handlePlay = (index) => {
     const video = videoRef.current[index];
@@ -74,7 +86,7 @@ const Testimonial = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`vd-card ${card.translation ?? ""} ${card.rotation}`}
+            className={`vd-card ${card.translation} ${card.rotation}`}
           >
             <video
               ref={(el) => (videoRef.current[index] = el)}

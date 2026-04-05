@@ -45,7 +45,7 @@ const FooterPage = () => {
         </div>
 
         <div className="text-milk font-paragraph mt-40 flex flex-col justify-between gap-10 px-5 font-medium md:flex-row md:px-10 md:text-lg">
-          <div className="flex items-center gap-5 md:gap-16">
+          <div className="flex items-center gap-5 md:gap-16 h-full">
             <div>
               <p>SPYLT Flavors</p>
             </div>
@@ -80,9 +80,9 @@ const FooterPage = () => {
           </div>
         </div>
 
-        <div className="copyright-box">
+        <div className="copyright-box mt-10">
           {/* The final row with copyright and legal links. */}
-          <p>Copyright © 2026 Kirtan Thakkar - All Rights Reserved</p>
+          <p >Copyright © 2026 Kirtan Thakkar - All Rights Reserved</p>
           <div className="flex items-center gap-7">
             <p>Privacy Policy</p>
             <p>Terms of Sеrvice</p>
