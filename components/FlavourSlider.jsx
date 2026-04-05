@@ -28,7 +28,6 @@ const FlavourSlider = () => {
         start: "top top", // Top of the section and top of the viewport
         end: "bottom 80%",
         scrub: true,
-        markers: true,
       },
     });
     titleTimeline.to(".first-text-split",{
